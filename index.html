@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Карта объектов</title>
+  <style>
+    html, body, #map {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .circle-marker {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: white;
+      border: 2px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: black;
+      box-shadow: 0 0 4px rgba(0,0,0,0.25);
+    }
+    .photo {
+      max-width: 250px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+ymaps.ready(function () {
+  var map = new ymaps.Map("map", {
+    center: [47.22, 39.7],
+    zoom: 10
+  });
+
+  var geoObjects = [
+
+    new ymaps.Placemark([47.013899, 39.922875], {
+      balloonContent: `<strong>Объект №5</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/5.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">5</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.277721, 40.408652], {
+      balloonContent: `<strong>Объект №16</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/16.jpg" /><img class="photo" src="images/16_2.jpg" /><img class="photo" src="images/16_3.jpg" /><img class="photo" src="images/16_4.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">16</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.092775, 40.391445], {
+      balloonContent: `<strong>Объект №27</strong><br/>1. Требует дообследования<br/><br/>`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">27</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([46.924844, 38.885528], {
+      balloonContent: `<strong>Объект №28</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/28.jpg" /><img class="photo" src="images/28_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">28</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.277822, 39.832324], {
+      balloonContent: `<strong>Объект №33</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/33.jpg" /><img class="photo" src="images/33_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">33</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.338315, 39.790415], {
+      balloonContent: `<strong>Объект №36</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/36.jpg" /><img class="photo" src="images/36_2.jpg" /><img class="photo" src="images/36_3.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">36</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.166471, 40.270566], {
+      balloonContent: `<strong>Объект №37</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/37.jpg" /><img class="photo" src="images/37_2.jpg" /><img class="photo" src="images/37_3.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">37</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.04098, 39.442107], {
+      balloonContent: `<strong>Объект №41</strong><br/>1. Есть ЖБ опора.<br/>2. Необходимо определить место размещения. <br/>3. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/41.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">41</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.315184, 39.646451], {
+      balloonContent: `<strong>Объект №47</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/47.jpg" /><img class="photo" src="images/47_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">47</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([46.96582, 39.541306], {
+      balloonContent: `<strong>Объект №48</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/48.jpg" /><img class="photo" src="images/48_2.jpg" /><img class="photo" src="images/48_3.jpg" /><img class="photo" src="images/48_4.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">48</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.048178, 39.842599], {
+      balloonContent: `<strong>Объект №49</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/49.jpg" /><img class="photo" src="images/49_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">49</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.52776, 39.636774], {
+      balloonContent: `<strong>Объект №50</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/50.jpg" /><img class="photo" src="images/50_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">50</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.091407, 39.611288], {
+      balloonContent: `<strong>Объект №54</strong><br/>1. Есть ЖБ опора.<br/>2. Необходимо определить место размещения. <br/>3. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/54.jpg" /><img class="photo" src="images/54_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">54</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.071884, 39.31321], {
+      balloonContent: `<strong>Объект №55</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/55.jpg" /><img class="photo" src="images/55_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">55</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.20419, 40.307913], {
+      balloonContent: `<strong>Объект №57</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/57.jpg" /><img class="photo" src="images/57_2.jpg" /><img class="photo" src="images/57_3.jpg" /><img class="photo" src="images/57_4.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">57</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.027364, 39.407059], {
+      balloonContent: `<strong>Объект №58</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/58.jpg" /><img class="photo" src="images/58_2.jpg" /><img class="photo" src="images/58_3.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">58</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([46.831672, 40.23805], {
+      balloonContent: `<strong>Объект №60</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/60.jpg" /><img class="photo" src="images/60_2.jpg" /><img class="photo" src="images/60_3.jpg" /><img class="photo" src="images/60_4.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">60</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.163085, 40.274415], {
+      balloonContent: `<strong>Объект №65</strong><br/>1. Есть ЖБ опора.<br/>2. Необходимо определить место размещения. <br/>3. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/65.jpg" /><img class="photo" src="images/65_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">65</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.270695, 40.359524], {
+      balloonContent: `<strong>Объект №66</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/66.jpg" /><img class="photo" src="images/66_2.jpg" /><img class="photo" src="images/66_3.jpg" /><img class="photo" src="images/66_4.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">66</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.105195, 39.643091], {
+      balloonContent: `<strong>Объект №76</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/76.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">76</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([47.077647, 39.485488], {
+      balloonContent: `<strong>Объект №79</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/>`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">79</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+    new ymaps.Placemark([46.875441, 39.326436], {
+      balloonContent: `<strong>Объект №82</strong><br/>1. Необходимо определить место размещения. <br/>2. Отсутствует тех.присоединения<br/><br/><img class="photo" src="images/82.jpg" /><img class="photo" src="images/82_2.jpg" />`
+    }, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<div class="circle-marker">82</div>'
+      ),
+      iconShape: {
+        type: 'Circle',
+        coordinates: [18, 18],
+        radius: 18
+      }
+    }),
+
+  ];
+
+  geoObjects.forEach(obj => map.geoObjects.add(obj));
+});
+</script>
+</body>
+</html>
